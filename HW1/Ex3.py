@@ -11,15 +11,34 @@
 # 123456 -> no
 count = 0
 print("Введите 6-ти значный номер билета ")
-num = int(input())
-
-while num > 0:
+n = int(input())
+bilet = n
+summa1 = 0
+summa2 = 0
+i = 0
+count = 0
+while n > 0:
     count += 1
-    num = num // 10
-print(count)
-
-
+    n = n // 10
+#print(count)
 if count != 6:
         print("Количество цифр в числе не соответсвует условию")
 else:
-        print("ok")
+    while i < 3:
+        x = n % 10
+        summa1 = summa1 + x
+        n = n // 10
+        i=i+1
+    while i < count:
+        x = n % 10
+        summa2 = summa2 + x
+        n = n // 10
+        i=i+1
+
+    # print(summa1)
+    # print(summa2)
+
+    if summa1 == summa2:
+        print("Счастливый билет ", bilet)
+    else: print ("Обычный билет ", bilet)
+
