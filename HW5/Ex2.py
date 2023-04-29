@@ -6,12 +6,11 @@
 # 2 2
 #     4
 
-def summa(a: object, b: object) -> object:
-    a+=1
-    b-=1
-    if b>0:
-        return summa(a, b)
-    else:
-        return a
+def summa(a: int, b: int) -> int:
+    if b > a:
+        a, b = b, a
+    if b > 0:
+        return summa(a + 1, b - 1)
+    return a
 
 print(summa(2, 2))
